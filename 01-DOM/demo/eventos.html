@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=UTF-8>
+  <title>Demo1</title>
+  <style type="text/css">
+    div {
+      height: 200px;
+      width: 200px;
+      border: black 1px solid;
+      background: plum;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='uno' class="divUno divDos">Uno</div>
+  <div id='dos' class="divUno">Dos</div>
+  <div id='tres' class="divUno">Tres</div>
+  <button id="add">ADD</button>
+
+
+  <script type="text/javascript">
+    //var arreglo = [1, 2, 3]
+    var divs = document.querySelectorAll('div');
+    var div = document.getElementById('uno');
+    
+    
+    var count = 4;
+    document.getElementById('add').addEventListener('click', function(e) {
+      var newDiv = document.createElement('div');
+      newDiv.setAttribute('class', count);
+      newDiv.innerHTML = count++;
+      document.body.appendChild(newDiv);
+
+    })
+    
+    divs.forEach(function(e) {
+      console.log(e);
+      e.addEventListener('click', function(e) {
+        if( evento.target.style.background == 'gray') {
+          evento.target.style.background = 'plum';
+        } else {
+          evento.target.style.background = 'gray';
+        }
+      })
+    })
+    // document.body.addEventListener('mousemove', function(e) {
+    //   // div.style.position = 'fixed';
+    //   // div.style.top = e.clientY + 15 +'px';
+    //   // div.style.left = e.clientX + 152+'px';
+
+    // })
+    document.body.addEventListener('click', function (e) {
+      console.log(e.target);
+    })
+  </script>
+</body>
+
+</html>
